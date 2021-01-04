@@ -3,6 +3,7 @@ package ru.javawebinar.topjava.util;
 import ru.javawebinar.topjava.model.UserMeal;
 import ru.javawebinar.topjava.model.UserMealWithExcess;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.Month;
@@ -31,7 +32,7 @@ public class UserMealsUtil {
         Collections.sort(meals, Comparator.comparing(UserMeal::getDateTime));
 
         List<UserMealWithExcess> mealWithExcessList = new ArrayList<>();
-        Map<Integer, Boolean> map = new HashMap<>();
+        Map<LocalDate, Boolean> map = new HashMap<>();
         LocalDateTime previousDateTime = null;
         UserMeal previousUserMeal = null;
         int totalCalories = 0;
@@ -42,10 +43,13 @@ public class UserMealsUtil {
                 previousDateTime = userMeal.getDateTime();
             }
 
-            if (previousDateTime.getDayOfYear() != userMeal.getDateTime().getDayOfYear()) {
+            LocalDate previousLocalDate = previousDateTime.toLocalDate();
+            LocalDate currentLocalDate = userMeal.getDateTime().toLocalDate();
+
+            if (!previousLocalDate.equals(currentLocalDate)) {
                 Boolean excess = totalCalories > caloriesPerDay;
-                Integer dayOfTheYear = previousUserMeal.getDateTime().getDayOfYear();
-                map.put(dayOfTheYear, excess);
+                LocalDate localDate = previousUserMeal.getDateTime().toLocalDate();
+                map.put(localDate, excess);
                 previousDateTime = userMeal.getDateTime();
                 totalCalories = userMeal.getCalories();
             } else {
@@ -55,13 +59,13 @@ public class UserMealsUtil {
 
             if (i == meals.size() - 1) {
                 Boolean excess = totalCalories > caloriesPerDay;
-                Integer dayOfTheYear = userMeal.getDateTime().getDayOfYear();
-                map.put(dayOfTheYear, excess);
+                LocalDate localDate = userMeal.getDateTime().toLocalDate();
+                map.put(localDate, excess);
             }
         }
 
         for(UserMeal userMeal : meals) {
-            Boolean excess = map.get(userMeal.getDateTime().getDayOfYear());
+            Boolean excess = map.get(userMeal.getDateTime().toLocalDate());
             Boolean timeIsBetween = TimeUtil.isBetweenHalfOpen(userMeal.getDateTime().toLocalTime(), startTime, endTime);
             if (excess != null && timeIsBetween) {
                 mealWithExcessList.add(new UserMealWithExcess(userMeal.getDateTime(), userMeal.getDescription(),
