@@ -17,18 +17,25 @@
         <tr>
             <td>DateTime:</td>
             <td>
-                <input type="datetime-local" name="dateTime"/>
+                <label>
+                <input type="datetime-local" name="dateTime" dataformatas="yyyy-MM-dd HH:mm" value="${meal.dateTime}"/>
+                </label>
             </td>
         </tr>
         <tr>
             <td>Description:</td>
             <td>
-                <input type="text" name="description"/>
+                <label>
+                <input type="text" name="description" value="${meal.description}"/>
+                </label>
             </td>
         </tr>
         <tr>
             <td>Calories:</td>
-            <td><input type="text" name="calories"/>
+            <td>
+                <label>
+                <input type="text" name="calories" value="${meal.calories}"/>
+                </label>
             </td>
         </tr>
         </tbody>

@@ -55,7 +55,6 @@ public class MealServlet extends HttpServlet {
             req.setAttribute("meal", meal);
         } else if (action.equalsIgnoreCase("add")) {
             forward = INSERT_OR_EDIT;
-            req.setAttribute("meals", getMealsTo());
         } else if (action.equalsIgnoreCase("empty")) {
             req.setAttribute("meals", getMealsTo());
         }
@@ -80,7 +79,7 @@ public class MealServlet extends HttpServlet {
             log.debug("method doPost, add meal {}", meal.toString());
             mealRepository.addMeal(meal);
         } else {
-            log.debug("method doPost, update meal {} by id = {}", meal.toString(), id);
+            log.debug("method doPost, update by id = {} meal {}", id, meal.toString());
             meal.setId(Integer.parseInt(id));
             mealRepository.updateMeal(Integer.parseInt(id), meal);
         }
