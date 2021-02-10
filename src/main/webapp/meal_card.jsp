@@ -17,30 +17,24 @@
         <tr>
             <td>DateTime:</td>
             <td>
-                <input
-                        type="text" name="dateTime"
-                        value="<c:out value="${empty meal.id ? 'yyyy-MM-dd HH:mm' : dateFormatter.format(meal.dateTime)}" />"/>
+                <input type="datetime-local" name="dateTime"/>
             </td>
         </tr>
         <tr>
             <td>Description:</td>
             <td>
-                <input
-                        type="text" name="description"
-                        value="<c:out value="${meal.description}" />"/>
+                <input type="text" name="description"/>
             </td>
         </tr>
         <tr>
             <td>Calories:</td>
-            <td><input
-                    type="text" name="calories"
-                    value="<c:out value="${meal.calories}" />"/>
+            <td><input type="text" name="calories"/>
             </td>
         </tr>
         </tbody>
     </table>
     <br>
-    <input type="submit" value="Submit"/>
+    <input type="submit" value="Save"/>
     <button type="button" onclick="window.history.back();">Cancel</button>
 </form>
 

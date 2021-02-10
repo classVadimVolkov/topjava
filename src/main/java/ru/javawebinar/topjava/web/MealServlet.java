@@ -23,7 +23,7 @@ import static org.slf4j.LoggerFactory.getLogger;
 public class MealServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private static final Logger log = getLogger(MealServlet.class);
-    public static final DateTimeFormatter DATE_TIME_FORMATTER =
+    private static final DateTimeFormatter DATE_TIME_FORMATTER =
             DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm", Locale.ENGLISH);
     private static MealRepository mealRepository;
 
@@ -71,8 +71,8 @@ public class MealServlet extends HttpServlet {
 
         Meal meal = new Meal();
         meal.setDescription(req.getParameter("description"));
-        meal.setDateTime(LocalDateTime.parse(req.getParameter("dateTime"), DATE_TIME_FORMATTER));
         meal.setCalories(Integer.parseInt(req.getParameter("calories")));
+        meal.setDateTime(LocalDateTime.parse(req.getParameter("dateTime")));
 
         String id = req.getParameter("id");
 
