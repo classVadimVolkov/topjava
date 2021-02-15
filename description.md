@@ -16,7 +16,7 @@ Hibernate, делаем конверторы для типов LocalDateTime (Ja
 - <a href="https://drive.google.com/file/d/0B9Ye2auQ_NsFSUNrdVc0bDZuX2s">Системы управления версиями</a>
 - <a href="http://www.youtube.com/watch?v=_PDIVhEs6TM">Java 8: Lambda</a>, Stream API
 - Обзор используемых в проекте технологий и инструментов.
-- <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFSlZMTXBJRXJpakU">Инструмент сборки Maven.</a>
+- <a href="https://drive.google.com/open?userId=0B9Ye2auQ_NsFSlZMTXBJRXJpakU">Инструмент сборки Maven.</a>
 - WAR. Веб-контейнер Tomcat. Сервлеты.
 - Логирование.
 - Обзор стандартных библиотек. Apache Commons, Guava
@@ -33,7 +33,7 @@ Hibernate, делаем конверторы для типов LocalDateTime (Ja
 - Поддержка HSQLDB
 - Транзакции
 - Профили Maven и Spring
-- <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFTWJOdHduOWtNcTA">Пул коннектов</a>
+- <a href="https://drive.google.com/open?userId=0B9Ye2auQ_NsFTWJOdHduOWtNcTA">Пул коннектов</a>
 - Spring Data JPA
 - Кэш Hibernate
 
@@ -56,7 +56,7 @@ Hibernate, делаем конверторы для типов LocalDateTime (Ja
 - Spring Binding/Validation
 - Работа с datatables через Ajax.
 - Spring Security Test
-- [Кастомизация JSON (@JsonView) и валидации (groups)](https://drive.google.com/open?id=0B9Ye2auQ_NsFRTFsTjVHR2dXczA)
+- [Кастомизация JSON (@JsonView) и валидации (groups)](https://drive.google.com/open?userId=0B9Ye2auQ_NsFRTFsTjVHR2dXczA)
 - Encoding password
 - <a href="https://drive.google.com/file/d/0B9Ye2auQ_NsFNDlPZGdUNThzNUU/view">CSRF (добавление в проект защиты от межсайтовой подделки запроса)</a>
 - form-login. Spring Security Taglib
@@ -65,8 +65,8 @@ Hibernate, делаем конверторы для типов LocalDateTime (Ja
 - Смена локали
 - Фильтрация JSON с помощью @JsonView
 - Защита от XSS (Cross Site Scripting)
-- <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFZkpVM19QWFBOQ2c">Деплой в Heroku</a>
+- <a href="https://drive.google.com/open?userId=0B9Ye2auQ_NsFZkpVM19QWFBOQ2c">Деплой в Heroku</a>
 - Локализация datatables, ошибок валидации
 - Обработка ошибок 404 (NotFound)
 - Доступ к AuthorizedUser
-- <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFNUpzYW1nLUZTaXM">Собеседование. Разработка ПО</a>
+- <a href="https://drive.google.com/open?userId=0B9Ye2auQ_NsFNUpzYW1nLUZTaXM">Собеседование. Разработка ПО</a>

@@ -59,7 +59,7 @@ _Антуан де Сент-Экзюпери_
     - [REST resource hierarchy](https://stackoverflow.com/questions/20951419/what-are-best-practices-for-rest-nested-resources)
 - 10: не смешивайте TO и Entity вместе. Лучше всего, если они будут независимыми друг от друга.
 - 11: не размещайте логику приложения и преобразования в TO в слое доступа к DB
-- 12: если приложению в объекте требуется только его id, используйте reference (как мы при сохранении еды вставляем туда юзера)
+- 12: если приложению в объекте требуется только его userId, используйте reference (как мы при сохранении еды вставляем туда юзера)
 - 13: [Use for money in java app](http://stackoverflow.com/a/43051227/548473)
 - 14: еще раз про [hashCode/equals в Entity](https://stackoverflow.com/questions/5031614/the-jpa-hashcode-equals-dilemma): не делайте сравнение по полям!
 - 15: название пакетов, имен классов для `model/to/web` достаточно стандартные (например `model/domain`). НЕ надо придумывать своих собственных правил

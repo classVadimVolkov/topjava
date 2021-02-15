@@ -43,7 +43,7 @@ Java Enterprise Online Project
     -  [Git - для новичков](https://www.youtube.com/watch?list=PLY4rE9dstrJyTdVJpv7FibSaXB4BHPInb&v=PEKN8NtBDQ0)
     - [Руководство по написанию комментариев в коммитах](https://techrocks.ru/2019/12/02/writing-good-commit-messages)
 
-##  ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 3. <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFZDdaaU5fZEo4X3c">Работа с проектом (выполнять инструкции)</a>
+##  ![video](https://cloud.githubusercontent.com/assets/13649199/13672715/06dbc6ce-e6e7-11e5-81a9-04fbddb9e488.png) 3. <a href="https://drive.google.com/open?userId=0B9Ye2auQ_NsFZDdaaU5fZEo4X3c">Работа с проектом (выполнять инструкции)</a>
 - **ВНИМАНИЕ: выбирайте для проекта простой пусть без пробелов и русских букв, например (Windows) `c:\projects\topjava\`. Иначе впоследствии будут проблемы**
 - **Плагин уже Git Intergation не требуется и вкладку `Version control` в IDEA переименовали в `Git`**
 ### Патч [prepare_to_HW0.patch](https://drive.google.com/file/d/1LNPpu9OkuCpfpD8ZJHO-o0vwu49p2i5M) (скачать и положить в каталог вашего проекта)
@@ -216,8 +216,8 @@ Java Enterprise Online Project
 -  <a href="https://stepic.org/course/Введение-в-Linux-73">Введение в Linux</a>
 
 #### Книги
--  <a href="http://www.ozon.ru/context/detail/id/24828676/">Джошуа Блох: Java. Эффективное программирование. Второе издание</a>
+-  <a href="http://www.ozon.ru/context/detail/userId/24828676/">Джошуа Блох: Java. Эффективное программирование. Второе издание</a>
 -  <a href="http://www.labirint.ru/books/87603/">Гамма, Хелм, Джонсон: Приемы объектно-ориентированного проектирования. Паттерны проектирования</a>
--  <a href="http://www.bookvoed.ru/book?id=639284">Редмонд Э.: Семь баз данных за семь недель. Введение в современные базы данных и идеологию NoSQL</a>
--  <a href="http://www.ozon.ru/context/detail/id/3174887/">Brian Goetz: Java Concurrency in Practice</a>
--  <a href="http://bookvoed.ru/book?id=2593572">G.L. McDowell: Cracking the Coding Interview</a>
+-  <a href="http://www.bookvoed.ru/book?userId=639284">Редмонд Э.: Семь баз данных за семь недель. Введение в современные базы данных и идеологию NoSQL</a>
+-  <a href="http://www.ozon.ru/context/detail/userId/3174887/">Brian Goetz: Java Concurrency in Practice</a>
+-  <a href="http://bookvoed.ru/book?userId=2593572">G.L. McDowell: Cracking the Coding Interview</a>

@@ -7,16 +7,16 @@
 - в UI контроллерах убрал префикс `ajax`
 - из тестов сервисов убрал `repository`. При проверке через `assertThrows` он не требуется
 - в `TestMatcher` сценарии сравнения сделал параметризируемыми (паттерн стратегия)
-- в API добавили `/users/{id}/with-meals` (см. [двунаправленные отношения](https://www.codeflow.site/ru/article/jackson-bidirectional-relationships-and-infinite-recursion))
-- добавил `UserTestData.USER_WITH_MEALS_MATCHER` (проверки пользователя сразу с едой) и константу id `NOT_FOUND`
+- в API добавили `/users/{userId}/with-meals` (см. [двунаправленные отношения](https://www.codeflow.site/ru/article/jackson-bidirectional-relationships-and-infinite-recursion))
+- добавил `UserTestData.USER_WITH_MEALS_MATCHER` (проверки пользователя сразу с едой) и константу userId `NOT_FOUND`
 
 ### Topjava 19
 - Изменилась логика для интервалов времени (исключаем `endTime`)
 - Заменил собственный `MessageUtil` велосипед на спринговый `MessageSourceAccessor`
 - В ролях убрал префиксы `ROLE_` ([Role and GrantedAuthority](https://stackoverflow.com/a/19542316/548473)) 
-- Добавился удобный метод `int AbstractBaseEntity.id()`
+- Добавился удобный метод `int AbstractBaseEntity.userId()`
 - Фикс `Location` в `ProfileRestController.register`
-- Фикс валидации `UniqueMailValidator` для REST update без `user.id`
+- Фикс валидации `UniqueMailValidator` для REST update без `user.userId`
 - Заменил `jdbc.initLocation` на полный путь - IDEA не ругается
 - В конфигурации `cargo-maven2-plugin` сделал [индивидуальный контекст приложения](https://stackoverflow.com/a/60797999/548473)
 - Тесты
@@ -75,7 +75,7 @@
 - `AuthorizedUser` зарефакторился в `SecurityUtil`
 - В javascript [заменил `var` на `let/const`](https://learn.javascript.ru/let-const). [Поддержка 95% браузеров](https://caniuse.com/#feat=const)
 - Подправил UI фильтрации и заголовка страниц, добавилась кнопка `Cancel` в профиль
-- Починил [баг в FireFox](https://bugzilla.mozilla.org/show_bug.cgi?id=884693): пустой ответ по ajax
+- Починил [баг в FireFox](https://bugzilla.mozilla.org/show_bug.cgi?userId=884693): пустой ответ по ajax
 - Сделал вход в приложение при нажании кнопок `Зайти как ...`
 - Добавил регистрацию пользователя по REST
 - Преименовал js файлы согласно [javascript filename naming convention](https://stackoverflow.com/questions/7273316/what-is-the-javascript-filename-naming-convention)
@@ -92,10 +92,10 @@
 - обновил версии: Ehcache 3.x, datatables, datetimepicker
 - добавил видео решений HW0 с одним проходом
 - поправил видео [Обзор Spring Framework. Spring Context](https://drive.google.com/file/d/1fBSLGEbc7YXBbmr_EwEHltCWNW_pUmIH). Дописал про Constructor injection.
-- заменил видео про тетсирование сервисов. Вместо самодельных матчеров стали использовать [AssertJ](http://joel-costigliola.github.io/assertj/index.html). Видео [Тестирование UserService через AssertJ](https://drive.google.com/open?id=1SPMkWMYPvpk9i0TA7ioa-9Sn1EGBtClD), время 1:53
-- сделал [видео с jQuery конвертерами и дефолтными группами валидации при сохранении в базу](https://drive.google.com/open?id=1tOMOdmaP5OQ7iynwC77bdXSs-13Ommax)
+- заменил видео про тетсирование сервисов. Вместо самодельных матчеров стали использовать [AssertJ](http://joel-costigliola.github.io/assertj/index.html). Видео [Тестирование UserService через AssertJ](https://drive.google.com/open?userId=1SPMkWMYPvpk9i0TA7ioa-9Sn1EGBtClD), время 1:53
+- сделал [видео с jQuery конвертерами и дефолтными группами валидации при сохранении в базу](https://drive.google.com/open?userId=1tOMOdmaP5OQ7iynwC77bdXSs-13Ommax)
 - сделал [видео с новым `DelegatingPasswordEncoder` и Json READ/WRITE access](https://drive.google.com/file/d/1XZXvOThinzPw4EhigAUdo8-MWT_g8wOt/view?usp=sharing)
-- убрал `AccessType.PROPERTY` для `AbstractBaseEntity.id` (см. [fixed HHH-3718](https://hibernate.atlassian.net/browse/HHH-3718))
+- убрал `AccessType.PROPERTY` для `AbstractBaseEntity.userId` (см. [fixed HHH-3718](https://hibernate.atlassian.net/browse/HHH-3718))
 - удалил `PasswordUtil`, возвращаю статус `NO_CONTENT` для REST delete, убрал группы валидации в `UserTo`
 - заменил в jQuery [success на done](https://stackoverflow.com/a/22213543/548473)
 - вместо `lang.jsp` сделал общий `bodyHeader.jsp`
@@ -141,7 +141,7 @@
    - реализаовал обработку дублирования `user.email` и `meal.dateTime` через [Controller Based Exception Handling](https://spring.io/blog/2013/11/01/exception-handling-in-spring-mvc#controller-based-exception-handling)
    - поменял отключение транзакционности в тестах через `@Transactional(propagation = Propagation.NEVER)`
    - сделал выбор в сервлете через switch
-   - [все логгирование сделал через {} форматирование](http://stackoverflow.com/questions/10555409/logger-slf4j-advantages-of-formatting-with-instead-of-string-concatenation) и поправил его в контроллерах (поле проверки id)
+   - [все логгирование сделал через {} форматирование](http://stackoverflow.com/questions/10555409/logger-slf4j-advantages-of-formatting-with-instead-of-string-concatenation) и поправил его в контроллерах (поле проверки userId)
    - [перешел на конструктор DI](http://stackoverflow.com/questions/39890849/what-exactly-is-field-injection-and-how-to-avoid-it)
    - в `ModelMatcher` переименовал `Comparator` -> `Equality`
    - [заинлайнил все лямбды](http://stackoverflow.com/questions/19718353/is-repeatedly-instantiating-an-anonymous-class-wasteful) (компараторы, ModelMatcher.equality)
@@ -159,7 +159,7 @@
 - добавил
   - выбор профиля базы через `ActiveProfilesResolver`/`AllActiveProfileResolver` на основе драйвера базы в classpath
   - видео <a href="https://drive.google.com/file/d/0B9Ye2auQ_NsFVmdpNDJSNXRTWUE">Cascade. Auto generate DDL.</a>
-  - проверку на правильность id в Ajax/Rest контроллерах (<a href="http://stackoverflow.com/a/32728226/548473">treat IDs in REST body</a>)
+  - проверку на правильность userId в Ajax/Rest контроллерах (<a href="http://stackoverflow.com/a/32728226/548473">treat IDs in REST body</a>)
   - тесты на валидацию входных значений контроллеров и <a href="http://hibernate.org/validator/documentation/getting-started/#unified-expression-language-el">зависимость на имплементацию</a>
   - <a href="http://getbootstrap.com/components/#glyphicons">Bootstrap Glyphicons</a>
 - рефакторинг
@@ -204,9 +204,9 @@
   - [Jackson @JsonView](https://habrahabr.ru/post/307392/)
   - валидацию объектов REST
   - [i18n в JavaScript](http://stackoverflow.com/a/6242840/548473)
-  - проверку предусловий и видео <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFU005ZzBNZmZnTVU">Методы улучшения качества кода</a>
+  - проверку предусловий и видео <a href="https://drive.google.com/open?userId=0B9Ye2auQ_NsFU005ZzBNZmZnTVU">Методы улучшения качества кода</a>
   - интеграцию с <a href="https://www.codacy.com/">проверкой кода в Codacy</a>
-  - [сравнение вермени исполнения запросов при различных meals индексах](https://drive.google.com/open?id=0B9Ye2auQ_NsFX3RLcnJCWmQ2Y0U)
+  - [сравнение вермени исполнения запросов при различных meals индексах](https://drive.google.com/open?userId=0B9Ye2auQ_NsFX3RLcnJCWmQ2Y0U)
 - tomcat7-maven-plugin плагин перключили на Tomcat 8 (cargo-maven2-plugin)
 - рефакторинг 
   - обработка ошибок сделал с array
@@ -215,19 +215,19 @@
 
 ### Topjava 3-6
 - добавил
-  - [выпускной проект](https://drive.google.com/open?id=0B9Ye2auQ_NsFcG83dEVDVTVMamc)
+  - [выпускной проект](https://drive.google.com/open?userId=0B9Ye2auQ_NsFcG83dEVDVTVMamc)
   - в таблицу meals составной индекс 
   - константы `Profiles.ACTIVE_DB`, `Profiles.DB_IMPLEMENTATION`
   - проверки и тесты на `NotFound` для `UserMealService.getWithUser` и  `UserService.getWithMeals`
   - в MockMvc фильтр CharacterEncodingFilter
-  - защиту от межсайтовой подделки запроса, видео <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFNDlPZGdUNThzNUU">Межсайтовая подделка запроса (CSRF)</a>
+  - защиту от межсайтовой подделки запроса, видео <a href="https://drive.google.com/open?userId=0B9Ye2auQ_NsFNDlPZGdUNThzNUU">Межсайтовая подделка запроса (CSRF)</a>
   - ограничение на диапазон дат для фильтра еды
 - рефакторинг
   - UserMealsUtil, ProfileRestController, компараторов в репозитоии 
   - `LoggedUser` отнаследовал от `org.springframework.security.core.userdetails.User`
   - переименовал `DbTest` в `AbstractServiceTest` и перенес сюда `@ActiveProfiles`
   - сделал выполнение скриптов в тестах через аннотацию `@Sql`
-  - вместо использования id и селектора сделал обработчик `onclick`
+  - вместо использования userId и селектора сделал обработчик `onclick`
   - изменил формат ввода даты в форме без 'T'
 - убрал
   - `LoggerWrapper`

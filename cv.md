@@ -3,7 +3,7 @@
 ![cv](https://cloud.githubusercontent.com/assets/13649199/10877471/93ea86b8-8157-11e5-9bfa-95e3fba75c58.jpg)
 
 -  <a href="http://habrahabr.ru/company/ua-hosting/blog/272617/">Научиться программировать сложнее, чем кажется</a>
-- [Собеседование. Разработка ПО. Вопросы.](https://drive.google.com/open?id=0B9Ye2auQ_NsFQVc2WUdCR0xvLWM)
+- [Собеседование. Разработка ПО. Вопросы.](https://drive.google.com/open?userId=0B9Ye2auQ_NsFQVc2WUdCR0xvLWM)
 - [Набор ссылок для тренировки и прохождения интервью](https://github.com/andreis/interview)
 
 ### Составление резюме:
@@ -47,11 +47,11 @@
 - [Вопросы по классам коллекциям от JavaRush-2](http://info.javarush.ru/translation/2013/10/08/Часто-задаваемые-на-собеседованиях-вопросы-по-классам-коллекциям-в-Java-Часть-2-.html)
 -  <a href="http://habrahabr.ru/post/181033/">Тест на знание SQL</a>
 -  <a href="http://jsehelper.blogspot.ru/p/blog-page.html">Вопросы на собеседовании Java Junior Developer</a>
--  <a href="https://play.google.com/store/apps/details?id=com.ab.jiq">Java вопросы с собеседований на Android</a>
--  <a href="https://drive.google.com/open?id=0B9Ye2auQ_NsFLTRFY293RUVPVms">Сборка вопросов от JavaRush</a>
-> про clone и finalize объязательно прочтите <a href="http://www.ozon.ru/context/detail/id/24828676/">Джошуа Блох: Java. Эффективное программирование (второе издание)</a>
+-  <a href="https://play.google.com/store/apps/details?userId=com.ab.jiq">Java вопросы с собеседований на Android</a>
+-  <a href="https://drive.google.com/open?userId=0B9Ye2auQ_NsFLTRFY293RUVPVms">Сборка вопросов от JavaRush</a>
+> про clone и finalize объязательно прочтите <a href="http://www.ozon.ru/context/detail/userId/24828676/">Джошуа Блох: Java. Эффективное программирование (второе издание)</a>
 
--  <a href="http://bookvoed.ru/book?id=2593572">Cracking the Coding Interview</a>
+-  <a href="http://bookvoed.ru/book?userId=2593572">Cracking the Coding Interview</a>
 > Особенно обратите внимание на раздел: <a href="http://storage.piter.com/upload/contents/978545901120/978545901120_X.pdf">Часть VIII. Вопросы собеседования</a>
 
 
