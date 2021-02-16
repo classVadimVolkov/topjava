@@ -103,9 +103,13 @@ public class MealServlet extends HttpServlet {
 
     private List<MealTo> getFiltered(HttpServletRequest request) {
         return mealRestController.getFilteredByDateAndByTime(
-        request.getParameter("startDate").isEmpty() ? null : DateTimeUtil.getDate("startDate"),
-        request.getParameter("endDate").isEmpty() ? null : DateTimeUtil.getDate("endDate"),
-        request.getParameter("startTime").isEmpty() ? null : DateTimeUtil.getTime("startTime"),
-        request.getParameter("endTime").isEmpty() ? null : DateTimeUtil.getTime("endTime"));
+        request.getParameter("startDate").isEmpty() ? null :
+                DateTimeUtil.getDate(request.getParameter("startDate")),
+        request.getParameter("endDate").isEmpty() ? null :
+                DateTimeUtil.getDate(request.getParameter("endDate")),
+        request.getParameter("startTime").isEmpty() ? null :
+                DateTimeUtil.getTime(request.getParameter("startTime")),
+        request.getParameter("endTime").isEmpty() ? null :
+                DateTimeUtil.getTime(request.getParameter("endTime")));
     }
 }

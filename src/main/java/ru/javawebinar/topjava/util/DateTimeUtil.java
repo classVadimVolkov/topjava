@@ -15,7 +15,7 @@ public class DateTimeUtil {
 
     public static boolean isBetweenInclusive(LocalDate ld, LocalDate startDate, LocalDate endDate) {
         return (startDate == null || ld.compareTo(startDate) >= 0) &&
-                (endDate == null || ld.compareTo(endDate) >= 0);
+                (endDate == null || ld.compareTo(endDate) <= 0);
     }
 
     public static String toString(LocalDateTime ldt) {
@@ -23,11 +23,11 @@ public class DateTimeUtil {
     }
 
     public static LocalDate getDate(String textDate) {
-        return LocalDate.parse(textDate);
+        return LocalDate.parse(textDate, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
     }
 
     public static LocalTime getTime(String textTime) {
-        return LocalTime.parse(textTime);
+        return LocalTime.parse(textTime, DateTimeFormatter.ofPattern("HH:mm"));
     }
 }
 
