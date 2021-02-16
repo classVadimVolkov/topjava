@@ -23,6 +23,14 @@
     <h2>Meals</h2>
     <a href="meals?action=create">Add Meal</a>
     <br><br>
+    <form method="get" action="meals">
+        <input name="startDate" type="date" value="${param.startDate}">
+        <input name="endDate" type="date" value="${param.endDate}">
+        <input name="startTime" type="time" value="${param.startTime}">
+        <input name="endTime" type="time" value="${param.endTime}">
+        <button type="submit" name="action" value="filter">Filter</button>
+        <button onclick="window.history.back()" type="button">Cancel</button>
+    </form>
     <table border="1" cellpadding="8" cellspacing="0">
         <thead>
         <tr>
@@ -34,7 +42,7 @@
         </tr>
         </thead>
         <c:forEach items="${meals}" var="meal">
-            <jsp:useBean userId="meal" type="ru.javawebinar.topjava.to.MealTo"/>
+            <%--<jsp:useBean userId="meal" type="ru.javawebinar.topjava.to.MealTo"/>--%>
             <tr class="${meal.excess ? 'excess' : 'normal'}">
                 <td>
                         <%--${meal.dateTime.toLocalDate()} ${meal.dateTime.toLocalTime()}--%>
@@ -44,8 +52,8 @@
                 </td>
                 <td>${meal.description}</td>
                 <td>${meal.calories}</td>
-                <td><a href="meals?action=update&userId=${meal.userId}">Update</a></td>
-                <td><a href="meals?action=delete&userId=${meal.userId}">Delete</a></td>
+                <td><a href="meals?action=update&id=${meal.id}">Update</a></td>
+                <td><a href="meals?action=delete&id=${meal.id}">Delete</a></td>
             </tr>
         </c:forEach>
     </table>

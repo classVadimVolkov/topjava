@@ -74,7 +74,7 @@ public class InMemoryMealRepository implements MealRepository {
         log.info("get filtered userId={}, startDate={}, endDate={}",
                 userId, startDate, endDate);
 
-        if (startDate == null && endDate == null) {
+        if (startDate == null || endDate == null) {
             return getAll(userId);
         }
 
