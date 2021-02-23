@@ -7,11 +7,13 @@ import java.time.LocalDateTime;
 import java.time.Month;
 import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class MealTestData {
-    public static final int MEAL_ID = AbstractBaseEntity.START_SEQ;
+    public static final int MEAL_ID = UserTestData.ADMIN_ID + 1;
+    public static final int USER_ID = AbstractBaseEntity.START_SEQ;
     public static final int NOT_FOUND = 100;
     public static final int CALORIES_PER_DAY = 1000;
 
@@ -48,6 +50,10 @@ public class MealTestData {
         updated.setDescription("Тестовое обновленное описание еды");
         updated.setCalories(9999);
         return updated;
+    }
+
+    public static List<Meal> getUserMeals() {
+        return Arrays.asList(meal7, meal6, meal5, meal4, meal3, meal2, meal1);
     }
 
     public static void assertMatch(Meal actual, Meal expected) {
