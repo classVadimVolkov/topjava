@@ -53,14 +53,24 @@ public class MealServiceTest {
     }
 
     @Test
+    public void getNotOwn() {
+        assertThrows(NotFoundException.class, () -> service.get(meal1.getId(), ADMIN_ID));
+    }
+
+    @Test
     public void delete() {
         service.delete(meal1.getId(), USER_ID);
-        assertThrows(NotFoundException.class, () -> service.get(meal1.getId(), USER_ID));
+        assertThrows(NotFoundException.class, () -> service.delete(meal1.getId(), USER_ID));
     }
 
     @Test
     public void deleteNotFound() {
         assertThrows(NotFoundException.class, () -> service.get(NOT_FOUND, USER_ID));
+    }
+
+    @Test
+    public void deleteNotOwn() {
+        assertThrows(NotFoundException.class, () -> service.get(meal1.getId(), ADMIN_ID));
     }
 
     @Test
@@ -85,6 +95,12 @@ public class MealServiceTest {
         Meal updated = getUpdated();
         service.update(updated, USER_ID);
         assertMatch(getUpdated(), service.get(updated.getId(), USER_ID));
+    }
+
+    @Test
+    public void updateNotOwn() {
+        Meal updated = getUpdated();
+        assertThrows(NotFoundException.class, () -> service.update(getUpdated(), ADMIN_ID));
     }
 
     @Test
