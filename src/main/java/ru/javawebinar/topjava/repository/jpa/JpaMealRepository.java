@@ -9,7 +9,6 @@ import java.util.List;
 
 @Repository
 public class JpaMealRepository implements MealRepository {
-public class JpaMealRepository implements MealRepository {
 
     @Override
     public Meal save(Meal meal, int userId) {
